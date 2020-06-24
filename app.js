@@ -9,9 +9,9 @@ const landingRouter = require('./routers/landing');
 
 app.use(landingRouter);
 
-//No router exists...
+//If no router exists...
 app.use((req, res, next) => {
-  res.end('Sorry no such route exists');
+  res.end('Sorry no such URL exists Try using only navigation URLs');
 });
 
 app.listen(3000);
