@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all-cards.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Clash Royale Cards</h1>
     <nav>
         <ul>
             <li>
@@ -20,8 +20,18 @@
             </li>
         </ul>
         <br>
-        <h3> Welcome ! here you can get information about every clash royale card </h3>
     </nav>
+    <main>
+        <div class="container">
+            <% cards.forEach(card => { %>
+            <div class="card">
+                <img src="<%= card.img %>" alt="<%= card.name %>">
+                <p><%= card.name %></p>
+                <button><a href="/card/more-info/<%= card.id %>">More-info</a></button>
+            </div>
+            <% }) %>
+        </div>
+    </main>
 </body>
 
 </html>

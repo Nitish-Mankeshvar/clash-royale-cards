@@ -1,0 +1,11 @@
+.container {
+    width: 95vh;
+    height: 100vh;
+    background-color: cadetblue;
+    margin: 0 auto;
+}
+
+.card {
+    display: inline-block;
+    margin: 20px;
+}
