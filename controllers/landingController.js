@@ -1,10 +1,10 @@
 // Route : "/", Method => GET
 exports.getLandingPage = (req, res, next) => {
-  res.render('landing');
+  res.render('userPages/landing');
 };
 
 exports.getAllCards = (req, res, next) => {
-  res.render('all-cards', {
+  res.render('userPages/all-cards', {
     cards: [
       {
         name: 'Three Musketeers',
@@ -24,5 +24,5 @@ exports.getAllCards = (req, res, next) => {
 exports.getSingleCard = (req, res, next) => {
   const cardId = req.params.id;
   console.log(cardId);
-  res.render('singleCard');
+  res.render('userPages/singleCard');
 };
