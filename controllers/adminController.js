@@ -1,3 +1,5 @@
+const BasicCard = require('../modal/BasicCard');
+
 //Route => admin/add-card | method => GET
 exports.addCard = (req, res, next) => {
   res.render('adminPages/addCard');
@@ -5,6 +7,14 @@ exports.addCard = (req, res, next) => {
 
 exports.addPostCard = (req, res, next) => {
   const { cardName, imageUrl } = req.body;
-  console.log(cardName, imageUrl);
-  res.redirect('/');
+  BasicCard.create({
+    cardName,
+    imageUrl,
+  })
+    .then((result) => {
+      res.redirect('/');
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
